@@ -11,9 +11,9 @@ This code implements smoke flow visualization by introducing a virtual 'smoke de
 </p>
 
 ## Other Animations
-<img width="256" height="256" src="p_anim" alt="animated"/>
-<img width="256" height="256" src="u_anim" alt="animated"/>
-<img width="256" height="256" src="v_anim" alt="animated"/>
+<img width="256" height="256" src="p_anim.gif" alt="animated"/>
+<img width="256" height="256" src="u_anim.gif" alt="animated"/>
+<img width="256" height="256" src="v_anim.gif" alt="animated"/>
 
 # Chorin's Method
 Chorin's pressure-projection method is an explicit method of simulating transient, incompressible fluid flows. It involves splitting the computation into three steps:
