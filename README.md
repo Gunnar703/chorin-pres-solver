@@ -3,6 +3,7 @@ Implements Chorin's pressure projection method to simulate transient, incompress
 
 # Smoke Visualization
 This code implements smoke flow visualization by introducing a virtual 'smoke density' field (virtual because it does not affect the simulation). Smoke is added at a user-specified location and propagated according to the continuity equation, where the density terms are replaced by 'smoke density' and the velocity terms are the same as in the simulation. An example visualization is shown below.
+
 ![smoke_anim](https://github.com/user-attachments/assets/f6ad3e0c-a732-441e-86cc-8eced47a3034)
 
 # Chorin's Method
