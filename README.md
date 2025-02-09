@@ -11,11 +11,9 @@ This code implements smoke flow visualization by introducing a virtual 'smoke de
 </p>
 
 ## Other Animations
+From left to right: Pressure, X-Velocity, and Y-Velocity.
 <p align="center">
-  <div>
-    <img width="256" height="256" src="pres_anim.gif" alt="animated"/>
-    Pressure
-  </div>
+  <img width="256" height="256" src="pres_anim.gif" alt="animated"/>
   <img width="256" height="256" src="u_anim.gif" alt="animated"/>
   <img width="256" height="256" src="v_anim.gif" alt="animated"/>
 </p>
