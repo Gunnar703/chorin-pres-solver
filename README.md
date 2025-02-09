@@ -7,7 +7,7 @@ This code implements smoke flow visualization by introducing a virtual 'smoke de
 <p align="center">
   <img width="256" height="256" src="smoke_anim.gif" alt="animated" />
   <br/>
-  Smoke visualization. Velocity BCs are homogeneous Dirichlet, except for the inlet. Pressure BCs are homogeneous Neumann on the top, right, and bottom, homogeneous Dirichlet on the left (except the inlet), and Nonhomogeneous Dirichlet (p = 100.0) at the inlet.
+  Smoke visualization. Velocity BCs are homogeneous Dirichlet, except for the inlet. Pressure BCs are homogeneous Neumann on the top, right, and bottom, homogeneous Dirichlet on the left (except the inlet), and inhomogeneous Dirichlet (p = 100.0) at the inlet.
 </p>
 
 ## Other Animations
