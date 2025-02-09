@@ -1,7 +1,7 @@
 # chorin-pressure-solver
 Implements Chorin's pressure projection method to simulate transient, incompressible fluid flow in a rectangular domain.
 
-# Smoke Visualization
+## Smoke Visualization
 This code implements smoke flow visualization by introducing a virtual 'smoke density' field (virtual because it does not affect the simulation). Smoke is added at a user-specified location and propagated according to the continuity equation, where the density terms are replaced by 'smoke density' and the velocity terms are the same as in the simulation. An example visualization is shown below.
 
 <p align="center">
@@ -9,6 +9,11 @@ This code implements smoke flow visualization by introducing a virtual 'smoke de
   <br/>
   Smoke visualization. Velocity BCs are homogeneous Dirichlet, except for the inlet. Pressure BCs are homogeneous Neumann on the top, right, and bottom, homogeneous Dirichlet on the left (except the inlet), and Nonhomogeneous Dirichlet (p = 100.0) at the inlet.
 </p>
+
+## Other Animations
+<img width="256" height="256" src="p_anim" alt="animated"/>
+<img width="256" height="256" src="u_anim" alt="animated"/>
+<img width="256" height="256" src="v_anim" alt="animated"/>
 
 # Chorin's Method
 Chorin's pressure-projection method is an explicit method of simulating transient, incompressible fluid flows. It involves splitting the computation into three steps:
