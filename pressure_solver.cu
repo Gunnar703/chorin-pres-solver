@@ -77,13 +77,16 @@ __global__ void set_pressure_bcs_vertical_kernel(
     // Left Wall - Dirichlet
     int hole_bot = cols / 2 - int(cols/10);
     int hole_top = cols / 2 + int(cols/10);
-    if ( (col > hole_bot) && (col < hole_top) )
+    if ( (col > hole_bot) && (col < hole_top) ) {
         p[0 * cols + col] = 200.0f;
-    else
+        p[(N_POINTS - 1) * cols + col] = 200.0f;
+    } else {
         p[0 * cols + col] = 0.0f; // p[1 * cols + col];
+        p[(N_POINTS - 1) * cols + col] = 0.0f;
+    }
 
     // Right Wall - Homogeneous Dirichlet
-    p[(N_POINTS - 1) * cols + col] = 0.0f;
+    // p[(N_POINTS - 1) * cols + col] = 0.0f;
     // p[(N_POINTS - 1) * cols + col] = p[(N_POINTS - 2) * cols + col];
 }
 
@@ -126,6 +129,9 @@ __global__ void add_smoke_source_kernel(float* smoke_field, int cols) {
         && (col < smoke_source_top)
     ) {
         int idx = 0 * cols + col;
+        smoke_field[idx] = DENSITY;
+
+        idx = (N_POINTS - 1) * cols + col;
         smoke_field[idx] = DENSITY;
     }
 }
@@ -318,7 +324,7 @@ int main () {
             output_png(
                 p_prev,
                 p_outfile.str(),
-                100.0f,
+                200.0f,
                 0.0f,
                 color_start,
                 color_end
