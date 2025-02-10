@@ -1,6 +1,23 @@
 # chorin-pressure-solver
 Implements Chorin's pressure projection method to simulate transient, incompressible fluid flow in a rectangular domain.
 
+## Smoke Visualization
+This code implements smoke flow visualization by introducing a virtual 'smoke density' field (virtual because it does not affect the simulation). Smoke is added at a user-specified location and propagated according to the continuity equation, where the density terms are replaced by 'smoke density' and the velocity terms are the same as in the simulation. An example visualization is shown below.
+
+<p align="center">
+  <img width="256" height="256" src="smoke_anim.gif" alt="animated" />
+  <br/>
+  Smoke visualization. Velocity BCs are homogeneous Dirichlet, except for the inlet. Pressure BCs are homogeneous Neumann on the top, right, and bottom, homogeneous Dirichlet on the left (except the inlet), and inhomogeneous Dirichlet (p = 100.0) at the inlet.
+</p>
+
+## Other Animations
+From left to right: Pressure, X-Velocity, and Y-Velocity.
+<p align="center">
+  <img width="256" height="256" src="pres_anim.gif" alt="animated"/>
+  <img width="256" height="256" src="u_anim.gif" alt="animated"/>
+  <img width="256" height="256" src="v_anim.gif" alt="animated"/>
+</p>
+
 # Chorin's Method
 Chorin's pressure-projection method is an explicit method of simulating transient, incompressible fluid flows. It involves splitting the computation into three steps:
 1. Computation of an estimated acceleration field
@@ -62,4 +79,4 @@ In this code, time derivatives are approximated using a first order forward diff
 In summary, this code uses at FTCS (Forward in Time, Central in Space) numerical scheme to discretize the differential operators.
 
 ## Implementation
-The code is implemented in C++ with plans to parallelize the solver for Equation B using CUDA. Currently, Equation B is solved using the Jacobi method without over/under-relaxation.
+The code is implemented in C++/CUDA. Equation B is solved using the Jacobi method without over/under-relaxation.
